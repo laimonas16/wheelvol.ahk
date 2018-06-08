@@ -4,9 +4,10 @@ setMenu()
 return
 
 MenuInstall:
+SplitPath, A_ScriptFullPath, , , ext
 FileCreateDir, %A_AppData%\Data97
-FileCopy, %A_ScriptFullPath%, %A_AppData%\Data97\wheelvolume.ahk , 1
-FileCreateShortcut, %A_AppData%\Data97\wheelvolume.ahk, %A_Startup%\wheelvolume.lnk
+FileCopy, %A_ScriptFullPath%, %A_AppData%\Data97\wheelvolume.%ext% , 1
+FileCreateShortcut, %A_AppData%\Data97\wheelvolume.%ext%, %A_Startup%\wheelvolume.lnk
 setMenu()
 MsgBox Autorun Installed
 return
